@@ -40,14 +40,14 @@ const game = (function() {
 
   function checkWin(player) {
     const winConditions = {
-      1: [[0, 1], [0, 1], [0, 2]],
-      2: [[1, 0], [1, 1], [1, 2]],
-      3: [[2, 0], [2, 1], [2, 2]],
-      4: [[0, 0], [1, 0], [2, 0]],
-      5: [[0, 1], [1, 1], [2, 1]],
-      6: [[0, 2], [1, 2], [2, 2]],
-      7: [[0, 0], [1, 1], [2, 2]],
-      8: [[0, 2], [1, 1], [0 ,1]],
+      1: [[0, 0], [0, 1], [0, 2]], // Horizontal top
+      2: [[1, 0], [1, 1], [1, 2]], // Horizontal middle
+      3: [[2, 0], [2, 1], [2, 2]], // Horizontal bottom
+      4: [[0, 0], [1, 0], [2, 0]], // Vertical left
+      5: [[0, 1], [1, 1], [2, 1]], // Vertical middle
+      6: [[0, 2], [1, 2], [2, 2]], // Vertical right
+      7: [[0, 0], [1, 1], [2, 2]], // Diagonal left 
+      8: [[0, 2], [1, 1], [2, 0]], // Diagonal right
     }
 
     // Returns winning player if any of the win conditions are met
@@ -94,7 +94,7 @@ const game = (function() {
         if(checkWin(player)) {
           alert(`${player.name} wins!`);
           gameOver = true;
-        };
+        }; // TODO: implement logic for ties i.e. if no nulls in gameBoard then it's a tie
       }
     }
     while(!gameOver);
