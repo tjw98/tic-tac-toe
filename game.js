@@ -15,6 +15,16 @@ const gameBoard = (function() {
   return {render}
 })()
 
+// Create Player constructor
+const Player = function(name, marker) {
+  this.name = name;
+  this.marker = marker;
+};
+
+// Create Players
+const player1 = new Player("Tom", "X");
+const player2 = new Player("Mel", "O");
+
 // Create Game Logic
 const game = (function() {
   function start() {
