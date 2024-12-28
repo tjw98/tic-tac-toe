@@ -1,3 +1,4 @@
+// Create Gameboard
 const gameBoard = (function() {
   const gameBoard = [
     [null, null, null],
@@ -14,4 +15,14 @@ const gameBoard = (function() {
   return {render}
 })()
 
-gameBoard.render();
+// Create Game Logic
+const game = (function() {
+  function start() {
+    gameBoard.render();
+  }
+
+  return {start}
+})()
+
+// Program starts
+game.start();
